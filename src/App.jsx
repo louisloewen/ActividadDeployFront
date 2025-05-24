@@ -36,7 +36,7 @@ function App() {
   // };
   const add = async (item) => {
     const token = localStorage.getItem("token");
-    const result = await fetch("https://actreactangular-production.up.railway.app/items/", {
+    const result = await fetch("https://actreactangular-production.up.railway.app/items", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -51,7 +51,7 @@ function App() {
 
   const del = async (id) => {
     const token = localStorage.getItem("token");
-    await fetch(`https://actreactangular-production.up.railway.app/items/${id}`, {
+    await fetch(`https://actreactangular-production.up.railway.app/items${id}`, {
       method: "DELETE",
       headers: {
         "Authorization": `Bearer ${token}`,
@@ -62,7 +62,7 @@ function App() {
   
 
   const login = async (user) => {
-    const result = await fetch("https://actreactangular-production.up.railway.app/login/", {
+    const result = await fetch("https://actreactangular-production.up.railway.app/login", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(user),
