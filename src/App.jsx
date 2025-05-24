@@ -21,10 +21,11 @@ function App() {
   let [isLogin, setIsLogin] = useState(false);
   useEffect(() => {
     if (isLogin) {
-      getItems()
+      getItems().then(data => {
+        setItems(data.items || data); // ajusta según la estructura de tu API
+      });
     }
-  }, [isLogin])
-
+  }, [isLogin]);
   
   
   // const sum = () => {
