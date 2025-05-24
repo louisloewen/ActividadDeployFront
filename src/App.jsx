@@ -9,6 +9,11 @@ import ResponsiveAppBar from "./components/AppBar";
 import Login from "./components/Login";
 import Welcome from "./components/Welcome";
 
+import useCount from "./hooks/useCount"; // o donde tengas definido useCount
+import { getItems } from "./api/items"; // o donde tengas definido getItems
+import ItemInfo from "./components/ItemInfo"; // componente que falta
+
+
 function App() {
   const { count, sum, resta } = useCount();
 
