@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ResponsiveAppBar from "./components/AppBar";
 import Login from "./components/Login";
 import Welcome from "./components/Welcome";
+import LifeCycle from "./LifeCycle";
 
 import useCount from "./hooks/useCount"; // o donde tengas definido useCount
 import { getItems } from "./api/items"; // o donde tengas definido getItems
@@ -15,7 +16,8 @@ import ItemInfo from "./components/iteminfo"; // componente que falta
 
 
 function App() {
-  const { count, sum, resta } = useCount();
+  // const { count, sum, resta } = useCount();
+  const [show, setShow] = useState(false);
   let [items, setItems] = useState([]);
   let [isLogin, setIsLogin] = useState(false);
   
@@ -96,6 +98,9 @@ function App() {
       </Routes>
       <Footer />
       </BrowserRouter>
+      <button onClick={() => setShow(!show)}>{show ? "Hide" : "Show"}</button>
+      {show && <LifeCycle />}
+      {}
       {/* {count}
       <Boton name={"suma"} click={sum} />
       <Boton click={resta} name={"resta"} />
